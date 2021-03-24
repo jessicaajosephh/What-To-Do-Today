@@ -12,7 +12,7 @@ class UsersController < ApplicationController
         erb :'users/login'
     end
 
-    pots '/users/login' do
+    post '/users/login' do
 
     end
 
