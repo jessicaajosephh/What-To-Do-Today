@@ -1,1 +1,4 @@
-<form action="/lists/" method="POST">
+<form method="post" action="/lists/<%= @list.id %>">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form> 

@@ -1,0 +1,7 @@
+<h1> Tasks </h1>
+
+<form method="POST" action="/tasks/new">
+  <input type="text" name="name" placeholder="Task Name">
+  <input type="checkbox" name="list_id" value="<%=list.id%>"><%=list.name%>
+  <input type="submit" id="submit">
+</form>
