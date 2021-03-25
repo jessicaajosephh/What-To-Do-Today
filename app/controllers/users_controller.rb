@@ -16,5 +16,9 @@ class UsersController < ApplicationController
 
     end
 
+    get '/users/logout' do
+
+    end
+
 
 end
