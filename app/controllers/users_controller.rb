@@ -8,8 +8,12 @@ class UsersController < ApplicationController
         @user = User.create(username: params[:username], password: params[:password])
     end
 
+    get '/users/:id' do
+        "show page"
+    end
+
     get '/users/login' do
-        #erb :'users/login'
+        erb :'users/login'
     end
 
     post '/users/login' do
