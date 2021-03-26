@@ -11,6 +11,7 @@ gem 'shotgun'
 gem 'pry'
 gem 'bcrypt'
 gem 'tux'
+gem "dotenv", "~> 2.7"
 #gem "rack-flash", "~> 0.1.2"
 
 
@@ -20,3 +21,5 @@ group :test do
   gem 'rack-test'
   gem 'database_cleaner', git: 'https://github.com/bmabey/database_cleaner.git'
 end
+
+

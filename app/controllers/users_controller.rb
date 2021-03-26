@@ -1,48 +1,34 @@
 class UsersController < ApplicationController
 
     get '/users/signup' do 
-        if logged_in?
-            redirect to '/tasks'
-        else
-            erb :'users/signup'
-        end
+        erb :'/users/signup'
     end
 
     post '/users/signup' do
-        if params[:username] == "" || params[:password] == ""
-            redirect to '/users/signup'
-        else
-            @user = User.create(:username => params[:username], :password => params[:password])
-            session[:user_id] = @user.id
-            redirect to '/tasks'
-        end
+        @user = User.create(username: params[:username], password: params[:password])
     end
 
     get '/users/login' do
-        if logged_in?
-            redirect to '/tasks'
-        else
-            erb :'users/login'
-        end
+        #erb :'users/login'
     end
 
     post '/users/login' do
-        @user = User.find_by(:username => params[:username])
-        if @user && @user.authenticate(params[:password])
-            session[:user_id] = @user.id
-            redirect to '/tasks'
-        else
-            redirect to '/users/login'
-        end
+        #@user = User.find_by(:username => params[:username])
+        #if @user && @user.authenticate(params[:password])
+        #    session[:user_id] = @user.id
+        #    redirect to '/tasks'
+        #else
+        #    redirect to '/login'
+        #end
     end
 
     get '/users/logout' do
-        if session[:user_id] != nil 
-            session.clear
-            redirect to '/users/login'
-        else
-            redirect to '/'
-        end
+        #if session[:user_id] != nil 
+        #    session.clear
+        #    redirect to '/login'
+        #else
+        #    redirect to '/'
+        #end
     end
 
 
