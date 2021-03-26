@@ -10,7 +10,11 @@ class TasksController < ApplicationController
     end
 
     get '/tasks/new' do
-        erb :'/tasks/new'
+        if logged_in?
+            erb :'/tasks/new'
+        else
+            redirect to '/users/login'
+        end
     end
 
     post '/tasks/new' do
